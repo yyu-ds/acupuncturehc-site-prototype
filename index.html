@@ -625,7 +625,8 @@
   .team-card {
     text-align: center;
   }
-  .team-photo {
+  .team-photo,
+  .staff-photo {
     width: min(100%, 240px);
     aspect-ratio: 4 / 5;
     border-radius: 28px;
@@ -641,7 +642,8 @@
     font-weight: 300;
     position: relative;
   }
-  .team-photo::after {
+  .team-photo::after,
+  .staff-photo::after {
     content: '';
     position: absolute;
     inset: 8px;
@@ -649,7 +651,8 @@
     border-radius: 20px;
     pointer-events: none;
   }
-  .team-photo img {
+  .team-photo img,
+  .staff-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -673,22 +676,12 @@
   }
   .staff-card {
     text-align: center;
-    background: var(--cream);
-    border: 1px solid var(--divider);
-    border-radius: 16px;
-    padding: 24px;
-  }
-  .staff-card img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 14px;
   }
   .staff-card h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
+    font-size: 24px;
     color: var(--forest-deep);
+    margin-top: 2px;
   }
   .team-card h3 {
     font-family: 'Cormorant Garamond', serif;
@@ -1440,15 +1433,15 @@
       <p>Our welcoming and friendly staff members include Natalie Richter, Chief Operations Officer, and Rosario Gutierrez, Chief Financial Officer. Our front desk staff Kathy Allen, Sarah Koury, Brianna Silvers, and Jessica Continenza help create a peaceful and relaxing space for your healing experience. They schedule appointments, verify insurance, assist with financial options, and answer questions in a safe and caring environment.</p>
       <div class="staff-grid">
         <div class="staff-card">
-          <img src="old-site-assets/natalie-richter.jpg" alt="Natalie Richter">
+          <div class="staff-photo"><img src="old-site-assets/natalie-richter.jpg" alt="Natalie Richter"></div>
           <h3>Natalie Richter</h3>
         </div>
         <div class="staff-card">
-          <img src="old-site-assets/rosario-gutierrez.jpg" alt="Rosario Gutierrez">
+          <div class="staff-photo"><img src="old-site-assets/rosario-gutierrez.jpg" alt="Rosario Gutierrez"></div>
           <h3>Rosario Gutierrez</h3>
         </div>
         <div class="staff-card">
-          <img src="old-site-assets/kathy-allen.jpg" alt="Kathy Allen">
+          <div class="staff-photo"><img src="old-site-assets/kathy-allen.jpg" alt="Kathy Allen"></div>
           <h3>Kathy Allen</h3>
         </div>
       </div>
