@@ -335,7 +335,12 @@
     align-items: center;
     gap: 16px;
     animation: float 4s ease-in-out infinite;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
   }
+  .hero-float-card:hover { box-shadow: 0 26px 70px rgba(0,0,0,0.16); }
   @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-8px); }
@@ -357,6 +362,12 @@
     font-size: 22px;
     font-weight: 600;
     color: var(--forest-deep);
+  }
+  .hero-float-card .stars {
+    color: var(--gold);
+    font-size: 15px;
+    letter-spacing: 1px;
+    vertical-align: 1px;
   }
 
   @keyframes fadeUp {
@@ -746,6 +757,45 @@
   .testimonials-inner .section-label { color: var(--sage-light); }
   .testimonials-inner .section-label::before { background: var(--sage-light); }
   .testimonials-inner .section-title { color: var(--cream); }
+  .rating-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+    padding: 12px 22px;
+    border-radius: 100px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.16);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .rating-badge:hover {
+    background: rgba(255,255,255,0.14);
+    transform: translateY(-2px);
+  }
+  .rating-stars {
+    color: var(--gold-light);
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  .rating-score {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--cream);
+    line-height: 1;
+  }
+  .rating-text {
+    font-size: 14px;
+    color: rgba(255,255,255,0.82);
+  }
+  .rating-text strong { color: var(--cream); }
+  .rating-arrow {
+    color: var(--gold-light);
+    font-size: 16px;
+    transition: transform 0.3s ease;
+  }
+  .rating-badge:hover .rating-arrow { transform: translateX(4px); }
   .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1164,9 +1214,10 @@
   Structured data (schema.org JSON-LD) for search engines and AI answer engines.
   TODO before production:
    - Update all absolute URLs when the site moves to its custom domain.
-   - Add "aggregateRating" with the REAL rating/count from Google Business Profile (do not invent).
-   - Add "sameAs" with the Google Business Profile and any social media URLs.
-   - Verify geo coordinates and opening hours (hours below are derived from the practitioner schedule).
+   - Verify opening hours (derived from the practitioner schedule).
+  Note: aggregateRating reflects the Google Business Profile (4.9 from 102 reviews); keep it
+  in sync over time. Google may not render review stars for self-serving LocalBusiness markup,
+  but AI answer engines still read it.
 -->
 <script type="application/ld+json">
 {
@@ -1182,6 +1233,16 @@
       "faxNumber": "+1-952-922-5003",
       "email": "acupuncturehc@gmail.com",
       "image": "https://yyu-ds.github.io/acupuncturehc-site-prototype/he-calligraphy_art.png",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "102",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "sameAs": [
+        "https://maps.app.goo.gl/pdbVnku6BAYoVDAR7"
+      ],
       "priceRange": "$$",
       "currenciesAccepted": "USD",
       "paymentAccepted": "Cash, Credit Card, Debit Card, HSA, FSA",
@@ -1195,8 +1256,8 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 44.8750,
-        "longitude": -93.3340
+        "latitude": 44.884626,
+        "longitude": -93.327507
       },
       "hasMap": "https://www.google.com/maps/place/6545+France+Ave+S,+Edina,+MN+55435",
       "areaServed": ["Edina", "Minneapolis", "Bloomington", "Twin Cities, Minnesota"],
@@ -1302,13 +1363,13 @@
       <div class="hero-image-container">
         <img fetchpriority="high" src="he-calligraphy_art.png" alt="He calligraphy, the Chinese character for harmony">
       </div>
-      <div class="hero-float-card">
+      <a class="hero-float-card" href="https://maps.app.goo.gl/pdbVnku6BAYoVDAR7" target="_blank" rel="noopener" aria-label="Rated 4.9 out of 5 stars from 102 Google reviews">
         <div class="icon">⭐</div>
         <div>
-          <div class="label">Trusted by thousands</div>
-          <div class="value">20+ Years of Care</div>
+          <div class="value">4.9 <span class="stars" aria-hidden="true">★★★★★</span></div>
+          <div class="label">102 Google reviews</div>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -1557,6 +1618,12 @@
     <div class="reveal">
       <div class="section-label">Testimonials</div>
       <h2 class="section-title">People We've Helped</h2>
+      <a class="rating-badge" href="https://maps.app.goo.gl/pdbVnku6BAYoVDAR7" target="_blank" rel="noopener" aria-label="Rated 4.9 out of 5 stars from 102 Google reviews. Read our reviews on Google.">
+        <span class="rating-stars" aria-hidden="true">★★★★★</span>
+        <span class="rating-score">4.9</span>
+        <span class="rating-text">from <strong>100+</strong> Google reviews</span>
+        <span class="rating-arrow" aria-hidden="true">→</span>
+      </a>
     </div>
     <div class="testimonials-grid">
       <div class="testimonial-card reveal">
