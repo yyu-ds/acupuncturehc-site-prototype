@@ -1,0 +1,25 @@
+# robots.txt — Acupuncture Health Center
+# NOTE: Crawlers only honor robots.txt at the HOST root (e.g. https://example.com/robots.txt).
+# On the GitHub Pages project URL this file lives under a subpath and is effectively ignored.
+# It WILL take effect once the site is served from its own custom domain (repo root = domain root).
+
+User-agent: *
+Allow: /
+
+# Allow major AI answer-engine crawlers (remove a block to opt that crawler out)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://yyu-ds.github.io/acupuncturehc-site-prototype/sitemap.xml
