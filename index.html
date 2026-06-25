@@ -4,8 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Acupuncture Health Center in Edina, Minnesota. Traditional Chinese medicine, acupuncture, herbal medicine, Tui Na, cupping, fees, insurance, and clinic information.">
-<title>Acupuncture Health Center | A Life of Health & Balance</title>
+<title>Acupuncture in Edina, MN | Acupuncture Health Center</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%232D5A3D'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='30' fill='%23FAF7F2'%3E%E9%8D%BC%3C/text%3E%3C/svg%3E">
+<link rel="canonical" href="https://yyu-ds.github.io/acupuncturehc-site-prototype/">
+
+<!-- Open Graph / social + AI link previews -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Acupuncture Health Center">
+<meta property="og:title" content="Acupuncture in Edina, MN | Acupuncture Health Center">
+<meta property="og:description" content="Traditional Chinese medicine in Edina, Minnesota — acupuncture, Chinese herbal medicine, Tui Na, and cupping. 20+ years of care. Call 952-922-5000.">
+<meta property="og:url" content="https://yyu-ds.github.io/acupuncturehc-site-prototype/">
+<meta property="og:image" content="https://yyu-ds.github.io/acupuncturehc-site-prototype/he-calligraphy_art.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Acupuncture in Edina, MN | Acupuncture Health Center">
+<meta name="twitter:description" content="Traditional Chinese medicine in Edina, Minnesota — acupuncture, Chinese herbal medicine, Tui Na, and cupping. 20+ years of care. Call 952-922-5000.">
+<meta name="twitter:image" content="https://yyu-ds.github.io/acupuncturehc-site-prototype/he-calligraphy_art.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -1141,6 +1159,90 @@
     .hero-float-card { display: none; }
   }
 </style>
+
+<!--
+  Structured data (schema.org JSON-LD) for search engines and AI answer engines.
+  TODO before production:
+   - Update all absolute URLs when the site moves to its custom domain.
+   - Add "aggregateRating" with the REAL rating/count from Google Business Profile (do not invent).
+   - Add "sameAs" with the Google Business Profile and any social media URLs.
+   - Verify geo coordinates and opening hours (hours below are derived from the practitioner schedule).
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["MedicalClinic", "LocalBusiness"],
+      "@id": "https://yyu-ds.github.io/acupuncturehc-site-prototype/#clinic",
+      "name": "Acupuncture Health Center",
+      "description": "Traditional Chinese medicine clinic in Edina, Minnesota offering acupuncture, Chinese herbal medicine, Tui Na, and cupping, with 20+ years of care.",
+      "url": "https://yyu-ds.github.io/acupuncturehc-site-prototype/",
+      "telephone": "+1-952-922-5000",
+      "faxNumber": "+1-952-922-5003",
+      "email": "acupuncturehc@gmail.com",
+      "image": "https://yyu-ds.github.io/acupuncturehc-site-prototype/he-calligraphy_art.png",
+      "priceRange": "$$",
+      "currenciesAccepted": "USD",
+      "paymentAccepted": "Cash, Credit Card, Debit Card, HSA, FSA",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "6545 France Avenue S, Suite C-21",
+        "addressLocality": "Edina",
+        "addressRegion": "MN",
+        "postalCode": "55435",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 44.8750,
+        "longitude": -93.3340
+      },
+      "hasMap": "https://www.google.com/maps/place/6545+France+Ave+S,+Edina,+MN+55435",
+      "areaServed": ["Edina", "Minneapolis", "Bloomington", "Twin Cities, Minnesota"],
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "08:30", "closes": "17:30" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "08:30", "closes": "17:15" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "08:30", "closes": "18:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "11:00", "closes": "18:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "08:00", "closes": "14:15" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:45", "closes": "14:30" }
+      ],
+      "availableService": [
+        { "@type": "MedicalTherapy", "name": "Acupuncture" },
+        { "@type": "MedicalTherapy", "name": "Chinese Herbal Medicine" },
+        { "@type": "MedicalTherapy", "name": "Tui Na Massage" },
+        { "@type": "MedicalTherapy", "name": "Cupping" },
+        { "@type": "MedicalTherapy", "name": "Cosmetic Acupuncture" }
+      ],
+      "employee": [
+        { "@type": "Person", "name": "Dr. Huan Ma", "jobTitle": "Acupuncturist & TCM Doctor", "honorificSuffix": "TCMD, PhD, L.Ac" },
+        { "@type": "Person", "name": "Tao Gong", "jobTitle": "Acupuncturist & TCM Doctor", "honorificSuffix": "TCMD, L.Ac" },
+        { "@type": "Person", "name": "Paige Powers", "jobTitle": "Acupuncturist", "honorificSuffix": "M.Ac., L.Ac" }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://yyu-ds.github.io/acupuncturehc-site-prototype/#website",
+      "url": "https://yyu-ds.github.io/acupuncturehc-site-prototype/",
+      "name": "Acupuncture Health Center",
+      "inLanguage": "en-US",
+      "publisher": { "@id": "https://yyu-ds.github.io/acupuncturehc-site-prototype/#clinic" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://yyu-ds.github.io/acupuncturehc-site-prototype/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Why acupuncture?", "acceptedAnswer": { "@type": "Answer", "text": "Acupuncture, a completely safe and natural medicine, is a form of stimulation therapy, which entices the body into correcting itself. Acupuncture is the oldest continuously practiced form of medicine in the world, with a history spanning 2,500 years and recorded in over 30,000 books. In essence, it is the largest, longest running clinical trial in world history." } },
+        { "@type": "Question", "name": "Does acupuncture hurt?", "acceptedAnswer": { "@type": "Answer", "text": "The needles used in acupuncture are extremely thin, causing minimal to no pain or discomfort." } },
+        { "@type": "Question", "name": "What will my first appointment be like?", "acceptedAnswer": { "@type": "Answer", "text": "At your first visit, you will sit down with the acupuncturist to discuss your symptoms or condition. Then you will be asked to lie down on a massage-style table, and the acupuncturist will begin treatment, inserting hair-thin, sterile needles into specific acupuncture points. These needles remain in place for twenty to thirty minutes, after which most people feel very calm and relaxed." } },
+        { "@type": "Question", "name": "Is acupuncture safe?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, it is very safe. Our practitioners are trained, licensed and certified professionals. Recent studies showed serious side effects in less than 1.1 patients out of 10,000. Because acupuncture is natural medicine, side effects are minimal, and the benefits are significant." } },
+        { "@type": "Question", "name": "How soon will I see results?", "acceptedAnswer": { "@type": "Answer", "text": "Many people experience immediate relief, while others may need additional treatments before they begin to see results. Every person responds differently to acupuncture, and each ailment takes a different amount of time to treat." } }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -1198,7 +1300,7 @@
     </div>
     <div class="hero-right">
       <div class="hero-image-container">
-        <img src="he-calligraphy_art.png" alt="He calligraphy, the Chinese character for harmony">
+        <img fetchpriority="high" src="he-calligraphy_art.png" alt="He calligraphy, the Chinese character for harmony">
       </div>
       <div class="hero-float-card">
         <div class="icon">⭐</div>
@@ -1222,33 +1324,33 @@
     <div class="services-grid">
       <div class="service-card reveal">
         <div class="service-icon acupuncture">
-          <img src="service-icons/acupuncture-icon-clean.png?v=2" alt="" aria-hidden="true">
+          <img loading="lazy" decoding="async" src="service-icons/acupuncture-icon-clean.png?v=2" alt="" aria-hidden="true">
         </div>
-        <img class="service-photo" src="old-site-assets/service-acupuncture.jpg" alt="Acupuncture treatment room from Acupuncture Health Center">
+        <img loading="lazy" decoding="async" class="service-photo" src="old-site-assets/service-acupuncture.jpg" alt="Acupuncture treatment room from Acupuncture Health Center">
         <h3>Acupuncture</h3>
         <p>The world's oldest practiced medicine, using fine sterile needles to stimulate specific points, initiating a healing response proven beneficial for hundreds of conditions.</p>
       </div>
       <div class="service-card reveal">
         <div class="service-icon herbal">
-          <img src="service-icons/herbal-medicine-icon-clean.png" alt="" aria-hidden="true">
+          <img loading="lazy" decoding="async" src="service-icons/herbal-medicine-icon-clean.png" alt="" aria-hidden="true">
         </div>
-        <img class="service-photo" src="old-site-assets/service-herbal-medicine.jpg" alt="Chinese herbal medicine supplies">
+        <img loading="lazy" decoding="async" class="service-photo" src="old-site-assets/service-herbal-medicine.jpg" alt="Chinese herbal medicine supplies">
         <h3>Chinese Herbal Medicine</h3>
         <p>With an inventory of over 400 herbs and formulas, we craft individualized herbal treatments designed to target your specific condition and improve overall health.</p>
       </div>
       <div class="service-card reveal">
         <div class="service-icon tuina">
-          <img src="service-icons/tui-na-icon-clean.png" alt="" aria-hidden="true">
+          <img loading="lazy" decoding="async" src="service-icons/tui-na-icon-clean.png" alt="" aria-hidden="true">
         </div>
-        <img class="service-photo" src="old-site-assets/service-tui-na.jpg" alt="Tui Na massage treatment">
+        <img loading="lazy" decoding="async" class="service-photo" src="old-site-assets/service-tui-na.jpg" alt="Tui Na massage treatment">
         <h3>Tui Na</h3>
         <p>A specialized Chinese massage that increases blood flow through kneading, rolling, pressing and acupressure — effective for musculoskeletal conditions and pediatric care.</p>
       </div>
       <div class="service-card reveal">
         <div class="service-icon cupping">
-          <img src="service-icons/cupping-icon-clean.png" alt="" aria-hidden="true">
+          <img loading="lazy" decoding="async" src="service-icons/cupping-icon-clean.png" alt="" aria-hidden="true">
         </div>
-        <img class="service-photo" src="old-site-assets/service-cupping.jpg" alt="Cupping therapy treatment">
+        <img loading="lazy" decoding="async" class="service-photo" src="old-site-assets/service-cupping.jpg" alt="Cupping therapy treatment">
         <h3>Cupping</h3>
         <p>An ancient practice applying gentle suction to the skin to treat conditions from headaches to respiratory issues, inducing a deep sense of relaxation and healing.</p>
       </div>
@@ -1409,19 +1511,19 @@
     </div>
     <div class="team-grid">
       <div class="team-card full-bio reveal">
-        <div class="team-photo"><img src="old-site-assets/dr-huan-ma.jpeg" alt="Dr. Huan Ma"></div>
+        <div class="team-photo"><img loading="lazy" decoding="async" src="old-site-assets/dr-huan-ma.jpeg" alt="Dr. Huan Ma"></div>
         <h3>Dr. Huan Ma</h3>
         <div class="credentials">TCMD, PhD, L.Ac</div>
         <p>Dr. Huan Ma comes from a long family line of Traditional Chinese Medicine doctors. He completed his Ph.D in acupuncture and internal medicine at Tianjin University of TCM, served as supervising physician at the Acupuncture and Chinese Affiliated Outpatient Clinic of Tianjin University in China, and was a contributing author to <em>Integration of TCM and Western Medicine Emergency</em> and <em>Practical Internal Medicine</em>. He is a Diplomate of Acupuncture certified by NCCAOM, licensed by the Minnesota Board of Medical Practice, and has served as Associate Dean of Acupuncture Clinical Services and full-time professor at Northwestern Health Sciences University. Dr. Ma is renowned for pain management and difficult, complex medical cases.</p>
       </div>
       <div class="team-card full-bio reveal">
-        <div class="team-photo"><img src="old-site-assets/tao-gong.jpg" alt="Tao Gong"></div>
+        <div class="team-photo"><img loading="lazy" decoding="async" src="old-site-assets/tao-gong.jpg" alt="Tao Gong"></div>
         <h3>Tao Gong</h3>
         <div class="credentials">TCMD, L.Ac</div>
         <p>Tao Gong completed her bachelor's and Master's of acupuncture at Tianjin University of TCM. She was a staff physician at the Tianjin Internal Medicine Clinic and is currently serving as a clinical supervisor and assistant professor at Northwestern Health Sciences University in Bloomington, MN. Dr. Gong has extensive clinical experience in gynecological issues and cosmetic acupuncture. She is a Diplomate of Acupuncture certified by NCCAOM and licensed by the Minnesota Board of Medical Practice.</p>
       </div>
       <div class="team-card full-bio reveal">
-        <div class="team-photo"><img src="old-site-assets/paige-powers.jpg" alt="Paige Powers"></div>
+        <div class="team-photo"><img loading="lazy" decoding="async" src="old-site-assets/paige-powers.jpg" alt="Paige Powers"></div>
         <h3>Paige Powers</h3>
         <div class="credentials">M.Ac., L.Ac</div>
         <p>Paige Powers has been involved in the wellness industry for over 30 years. She is an experienced Chinese Medicine Practitioner with training from Jung Tao School of Classical Chinese Medicine and an MAc in Acupuncture, graduating Valedictorian from Northwestern Health Sciences. She received her BFA in Dance and Kinesiology and BS in Anthropology from Florida State University, is NCCAOM board certified, and is licensed by the Minnesota Board of Medical Practice.</p>
@@ -1433,15 +1535,15 @@
       <p>Our welcoming and friendly staff members include Natalie Richter, Chief Operations Officer, and Rosario Gutierrez, Chief Financial Officer. Our front desk staff Kathy Allen, Sarah Koury, Brianna Silvers, and Jessica Continenza help create a peaceful and relaxing space for your healing experience. They schedule appointments, verify insurance, assist with financial options, and answer questions in a safe and caring environment.</p>
       <div class="staff-grid">
         <div class="staff-card">
-          <div class="staff-photo"><img src="old-site-assets/natalie-richter.jpg" alt="Natalie Richter"></div>
+          <div class="staff-photo"><img loading="lazy" decoding="async" src="old-site-assets/natalie-richter.jpg" alt="Natalie Richter"></div>
           <h3>Natalie Richter</h3>
         </div>
         <div class="staff-card">
-          <div class="staff-photo"><img src="old-site-assets/rosario-gutierrez.jpg" alt="Rosario Gutierrez"></div>
+          <div class="staff-photo"><img loading="lazy" decoding="async" src="old-site-assets/rosario-gutierrez.jpg" alt="Rosario Gutierrez"></div>
           <h3>Rosario Gutierrez</h3>
         </div>
         <div class="staff-card">
-          <div class="staff-photo"><img src="old-site-assets/kathy-allen.jpg" alt="Kathy Allen"></div>
+          <div class="staff-photo"><img loading="lazy" decoding="async" src="old-site-assets/kathy-allen.jpg" alt="Kathy Allen"></div>
           <h3>Kathy Allen</h3>
         </div>
       </div>

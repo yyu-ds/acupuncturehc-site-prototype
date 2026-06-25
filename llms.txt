@@ -1,0 +1,35 @@
+# Acupuncture Health Center
+
+> Traditional Chinese medicine clinic in Edina, Minnesota offering acupuncture, Chinese herbal medicine, Tui Na, and cupping. Over 20 years of care, in-network with most major insurance.
+
+## Key facts
+- Location: 6545 France Avenue S, Suite C-21, Edina, MN 55435
+- Phone: 952-922-5000 (Fax: 952-922-5003)
+- Email: acupuncturehc@gmail.com
+- Hours (derived from practitioner schedule; verify front-desk hours): Mon 8:30am–5:30pm, Tue 8:30am–5:15pm, Wed 8:30am–6:00pm, Thu 11:00am–6:00pm, Fri 8:00am–2:15pm, Sat 8:45am–2:30pm, Sun closed
+- Practitioners: Dr. Huan Ma (TCMD, PhD, L.Ac), Tao Gong (TCMD, L.Ac), Paige Powers (M.Ac., L.Ac)
+
+## Services
+- Acupuncture
+- Chinese Herbal Medicine (inventory of 400+ herbs and formulas)
+- Tui Na (Chinese therapeutic massage)
+- Cupping
+- Cosmetic Acupuncture
+
+## Conditions commonly treated
+- Pain management (back, knee, arthritis, sciatica, migraines, fibromyalgia, carpal tunnel)
+- Cardiopulmonary (allergies, asthma, hypertension)
+- Genitourinary (dysmenorrhea, PMS, infertility, UTIs)
+- Gastrointestinal (IBS, GERD, constipation/diarrhea)
+- Wellness & prevention (stress, weight loss, smoking cessation)
+- Other (stroke recovery, Bell's palsy, insomnia, anxiety and depression)
+
+## Fees
+- First visit evaluation: $45 (one-time)
+- Acupuncture session: $85
+- Herbal consultation: $52
+- Non-insurance package: 8 treatments for $600 ($75 each)
+- In-network with most major insurance; HSA/FSA accepted
+
+## Pages
+- Home / full site: https://yyu-ds.github.io/acupuncturehc-site-prototype/
