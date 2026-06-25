@@ -324,50 +324,311 @@
     object-fit: cover;
     object-position: center;
   }
-  .hero-float-card {
+  .hero-review-wrap {
     position: absolute;
-    bottom: -20px; left: -40px;
-    background: var(--white);
-    padding: 24px 28px;
-    border-radius: 16px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    bottom: -24px; left: -44px;
+    z-index: 4;
+    perspective: 900px;
+    transform-style: preserve-3d;
+    animation: float 4.8s ease-in-out infinite;
+    --tilt-x: 0deg;
+    --tilt-y: 0deg;
+    --glow-x: 50%;
+    --glow-y: 50%;
+  }
+  .hero-review-wrap::before {
+    content: '';
+    position: absolute;
+    inset: -14px;
+    border-radius: 30px;
+    background: conic-gradient(
+      from 0deg,
+      rgba(196,162,101,0),
+      rgba(212,185,122,0.56),
+      rgba(45,90,61,0.28),
+      rgba(212,185,122,0.5),
+      rgba(196,162,101,0)
+    );
+    filter: blur(18px);
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    animation: reviewAura 5s linear infinite;
+    pointer-events: none;
+  }
+  .hero-review-wrap:hover,
+  .hero-review-wrap.is-pointer-active,
+  .hero-review-wrap:focus-within {
+    animation-play-state: paused;
+  }
+  .hero-review-wrap:hover::before,
+  .hero-review-wrap.is-pointer-active::before,
+  .hero-review-wrap:focus-within::before {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  .hero-float-card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-width: 338px;
+    background:
+      radial-gradient(circle at var(--glow-x) var(--glow-y), rgba(255,244,205,0.9), transparent 35%),
+      linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(250,247,242,0.93) 100%);
+    padding: 20px 22px;
+    border-radius: 22px;
+    border: 1px solid rgba(255,255,255,0.78);
+    box-shadow:
+      0 24px 70px rgba(30,63,43,0.14),
+      0 8px 24px rgba(196,162,101,0.12),
+      inset 0 1px 0 rgba(255,255,255,0.8);
     display: flex;
     align-items: center;
-    gap: 16px;
-    animation: float 4s ease-in-out infinite;
+    gap: 14px;
     text-decoration: none;
     color: inherit;
     cursor: pointer;
-    transition: box-shadow 0.3s ease;
+    transform: rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translateZ(0);
+    transform-style: preserve-3d;
+    transition: transform 0.24s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    will-change: transform;
   }
-  .hero-float-card:hover { box-shadow: 0 26px 70px rgba(0,0,0,0.16); }
+  .hero-float-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(circle at 18% 16%, rgba(255,255,255,0.96), transparent 24%),
+      linear-gradient(120deg, transparent 30%, rgba(212,185,122,0.18), transparent 72%);
+    opacity: 0.72;
+    pointer-events: none;
+  }
+  .hero-float-card::after {
+    content: '';
+    position: absolute;
+    top: -40%;
+    bottom: -40%;
+    left: -65%;
+    width: 52%;
+    background: linear-gradient(105deg, transparent, rgba(255,255,255,0.76), transparent);
+    transform: translateX(-120%) rotate(14deg);
+    transition: transform 0.78s cubic-bezier(.2,.8,.2,1);
+    pointer-events: none;
+  }
+  .hero-review-wrap:hover .hero-float-card,
+  .hero-review-wrap.is-pointer-active .hero-float-card,
+  .hero-review-wrap:focus-within .hero-float-card {
+    border-color: rgba(212,185,122,0.58);
+    box-shadow:
+      0 34px 90px rgba(30,63,43,0.2),
+      0 14px 36px rgba(196,162,101,0.22),
+      inset 0 1px 0 rgba(255,255,255,0.9);
+    transform: translateY(-7px) scale(1.025) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  }
+  .hero-review-wrap:hover .hero-float-card::after,
+  .hero-review-wrap.is-pointer-active .hero-float-card::after,
+  .hero-review-wrap:focus-within .hero-float-card::after {
+    transform: translateX(360%) rotate(14deg);
+  }
+  .hero-float-card:focus-visible,
+  .rating-badge:focus-visible {
+    outline: 3px solid rgba(212,185,122,0.5);
+    outline-offset: 5px;
+  }
   @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-8px); }
   }
+  @keyframes reviewAura {
+    to { transform: scale(0.92) rotate(360deg); }
+  }
+  .hero-review-wrap:hover::before,
+  .hero-review-wrap.is-pointer-active::before,
+  .hero-review-wrap:focus-within::before {
+    animation-name: reviewAuraActive;
+  }
+  @keyframes reviewAuraActive {
+    to { transform: scale(1) rotate(360deg); }
+  }
   .hero-float-card .icon {
-    width: 48px; height: 48px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    position: relative;
+    width: 58px; height: 58px;
+    flex: 0 0 58px;
+    border-radius: 18px;
+    background:
+      radial-gradient(circle at 34% 24%, rgba(255,255,255,0.85), transparent 30%),
+      linear-gradient(145deg, #DABE7B 0%, var(--gold) 60%, #A97F39 100%);
     display: flex; align-items: center; justify-content: center;
-    font-size: 22px;
+    box-shadow:
+      0 14px 26px rgba(196,162,101,0.32),
+      inset 0 1px 0 rgba(255,255,255,0.42);
+    transform: translateZ(22px);
+  }
+  .hero-float-card .icon::after {
+    content: '';
+    position: absolute;
+    width: 9px; height: 9px;
+    top: 12px; right: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 0 16px rgba(255,255,255,0.95);
+  }
+  .hero-float-card .icon-star {
+    color: #FFF4C8;
+    font-size: 27px;
+    line-height: 1;
+    text-shadow: 0 2px 12px rgba(91,61,16,0.32);
+    transform: translateZ(12px);
+  }
+  .hero-review-copy {
+    display: grid;
+    gap: 5px;
+    transform: translateZ(16px);
   }
   .hero-float-card .label {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--text-light);
-    letter-spacing: 0.5px;
+    letter-spacing: 0.35px;
   }
   .hero-float-card .value {
+    display: flex;
+    align-items: baseline;
+    gap: 9px;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
+    font-size: 29px;
     font-weight: 600;
     color: var(--forest-deep);
+    line-height: 0.95;
   }
   .hero-float-card .stars {
     color: var(--gold);
-    font-size: 15px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
     letter-spacing: 1px;
     vertical-align: 1px;
+    text-shadow: 0 0 20px rgba(212,185,122,0.32);
+  }
+  .review-action {
+    margin-left: auto;
+    align-self: center;
+    padding: 8px 11px;
+    border-radius: 999px;
+    background: rgba(45,90,61,0.08);
+    color: var(--forest);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    transform: translateZ(18px);
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  .hero-review-wrap:hover .review-action,
+  .hero-review-wrap.is-pointer-active .review-action,
+  .hero-review-wrap:focus-within .review-action {
+    background: var(--forest);
+    color: var(--cream);
+  }
+  .hero-map-preview {
+    position: absolute;
+    left: 18px;
+    bottom: calc(100% + 16px);
+    width: min(360px, calc(100vw - 48px));
+    overflow: visible;
+    border-radius: 24px;
+    background: rgba(255,255,255,0.96);
+    border: 1px solid rgba(255,255,255,0.78);
+    box-shadow:
+      0 28px 80px rgba(30,63,43,0.2),
+      0 10px 30px rgba(0,0,0,0.08);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(14px) scale(0.96) rotateX(-8deg);
+    transform-origin: bottom left;
+    transition: opacity 0.28s ease, visibility 0.28s ease, transform 0.36s cubic-bezier(.2,.8,.2,1);
+    pointer-events: none;
+  }
+  .hero-map-preview::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 46px;
+    width: 16px; height: 16px;
+    background: rgba(255,255,255,0.96);
+    transform: rotate(45deg);
+    border-right: 1px solid rgba(255,255,255,0.78);
+    border-bottom: 1px solid rgba(255,255,255,0.78);
+  }
+  .hero-review-wrap:hover .hero-map-preview,
+  .hero-review-wrap.is-pointer-active .hero-map-preview,
+  .hero-review-wrap:focus-within .hero-map-preview {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1) rotateX(0);
+  }
+  .map-frame {
+    position: relative;
+    height: 132px;
+    overflow: hidden;
+    border-radius: 24px 24px 0 0;
+    background: var(--sage-light);
+  }
+  .map-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    transform: scale(1.08);
+    transform-origin: center;
+    filter: saturate(0.9) contrast(1.05);
+    pointer-events: none;
+  }
+  .map-frame::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, transparent 42%, rgba(30,63,43,0.54) 100%),
+      radial-gradient(circle at 48% 54%, transparent 0 18px, rgba(250,247,242,0.18) 19px, transparent 35px);
+  }
+  .map-chip {
+    position: absolute;
+    left: 16px;
+    bottom: 14px;
+    z-index: 1;
+    padding: 7px 11px;
+    border-radius: 999px;
+    background: rgba(250,247,242,0.92);
+    color: var(--forest-deep);
+    font-size: 11px;
+    font-weight: 600;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+  }
+  .preview-body {
+    padding: 16px 18px 18px;
+  }
+  .preview-kicker {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+  .preview-body strong {
+    display: block;
+    color: var(--forest-deep);
+    font-size: 16px;
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+  .preview-body span {
+    display: block;
+    color: var(--text-light);
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  .preview-meta {
+    margin-top: 9px;
+    color: var(--forest) !important;
+    font-weight: 600;
   }
 
   @keyframes fadeUp {
@@ -758,20 +1019,47 @@
   .testimonials-inner .section-label::before { background: var(--sage-light); }
   .testimonials-inner .section-title { color: var(--cream); }
   .rating-badge {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     display: inline-flex;
     align-items: center;
     gap: 12px;
     margin-top: 24px;
     padding: 12px 22px;
     border-radius: 100px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.16);
+    background:
+      radial-gradient(circle at 18% 20%, rgba(255,255,255,0.18), transparent 28%),
+      rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.12);
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .rating-badge::after {
+    content: '';
+    position: absolute;
+    top: -70%;
+    bottom: -70%;
+    left: -54%;
+    width: 42%;
+    background: linear-gradient(105deg, transparent, rgba(255,255,255,0.35), transparent);
+    transform: translateX(-140%) rotate(13deg);
+    transition: transform 0.72s cubic-bezier(.2,.8,.2,1);
+    pointer-events: none;
   }
   .rating-badge:hover {
-    background: rgba(255,255,255,0.14);
-    transform: translateY(-2px);
+    background:
+      radial-gradient(circle at 18% 20%, rgba(255,255,255,0.24), transparent 28%),
+      rgba(255,255,255,0.15);
+    border-color: rgba(212,185,122,0.36);
+    transform: translateY(-3px) scale(1.012);
+    box-shadow:
+      0 18px 42px rgba(0,0,0,0.12),
+      inset 0 1px 0 rgba(255,255,255,0.16);
+  }
+  .rating-badge:hover::after {
+    transform: translateX(360%) rotate(13deg);
   }
   .rating-stars {
     color: var(--gold-light);
@@ -1206,7 +1494,24 @@
     .insurance-action { justify-self: start; }
     .footer-inner { padding: 30px 24px; gap: 20px; }
     .footer-links { gap: 10px 18px; }
-    .hero-float-card { display: none; }
+    .hero-review-wrap { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-review-wrap,
+    .hero-review-wrap::before,
+    .hero-float-card,
+    .hero-float-card::after,
+    .rating-badge,
+    .rating-badge::after,
+    .hero-map-preview {
+      animation: none !important;
+      transition-duration: 0.01ms !important;
+    }
+    .hero-review-wrap:hover .hero-float-card,
+    .hero-review-wrap.is-pointer-active .hero-float-card,
+    .hero-review-wrap:focus-within .hero-float-card {
+      transform: none;
+    }
   }
 </style>
 
@@ -1363,13 +1668,28 @@
       <div class="hero-image-container">
         <img fetchpriority="high" src="he-calligraphy_art.png" alt="He calligraphy, the Chinese character for harmony">
       </div>
-      <a class="hero-float-card" href="https://maps.app.goo.gl/pdbVnku6BAYoVDAR7" target="_blank" rel="noopener" aria-label="Rated 4.9 out of 5 stars from 102 Google reviews">
-        <div class="icon">⭐</div>
-        <div>
-          <div class="value">4.9 <span class="stars" aria-hidden="true">★★★★★</span></div>
-          <div class="label">102 Google reviews</div>
+      <div class="hero-review-wrap">
+        <a class="hero-float-card" href="https://maps.app.goo.gl/pdbVnku6BAYoVDAR7" target="_blank" rel="noopener" aria-label="Rated 4.9 out of 5 stars from 100+ Google reviews. Opens Google Maps.">
+          <span class="icon" aria-hidden="true"><span class="icon-star">★</span></span>
+          <span class="hero-review-copy">
+            <span class="value">4.9 <span class="stars" aria-hidden="true">★★★★★</span></span>
+            <span class="label">100+ Google reviews</span>
+          </span>
+          <span class="review-action" aria-hidden="true">Maps</span>
+        </a>
+        <div class="hero-map-preview" aria-hidden="true">
+          <div class="map-frame">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2824.5!2d-93.3340!3d44.8750!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87f627e5b3f7c8e3%3A0x2e9f8d7a5c6b4a3!2s6545+France+Ave+S%2C+Edina%2C+MN+55435!5e0!3m2!1sen!2sus!4v1" title="Map preview for Acupuncture Health Center" loading="lazy" tabindex="-1"></iframe>
+            <span class="map-chip">Suite C-21</span>
+          </div>
+          <div class="preview-body">
+            <div class="preview-kicker">Google Maps preview</div>
+            <strong>Acupuncture Health Center</strong>
+            <span>6545 France Ave S, Edina, MN</span>
+            <span class="preview-meta">4.9 ★ · 100+ reviews</span>
+          </div>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 </section>
@@ -1618,7 +1938,7 @@
     <div class="reveal">
       <div class="section-label">Testimonials</div>
       <h2 class="section-title">People We've Helped</h2>
-      <a class="rating-badge" href="https://maps.app.goo.gl/pdbVnku6BAYoVDAR7" target="_blank" rel="noopener" aria-label="Rated 4.9 out of 5 stars from 102 Google reviews. Read our reviews on Google.">
+      <a class="rating-badge" href="https://maps.app.goo.gl/pdbVnku6BAYoVDAR7" target="_blank" rel="noopener" aria-label="Rated 4.9 out of 5 stars from 100+ Google reviews. Read our reviews on Google.">
         <span class="rating-stars" aria-hidden="true">★★★★★</span>
         <span class="rating-score">4.9</span>
         <span class="rating-text">from <strong>100+</strong> Google reviews</span>
@@ -1943,6 +2263,38 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Pointer-reactive Google review badge.
+  const reviewWrap = document.querySelector('.hero-review-wrap');
+  const finePointer = window.matchMedia('(pointer: fine)');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  if (reviewWrap && finePointer.matches && !reducedMotion.matches) {
+    const resetReviewBadge = () => {
+      reviewWrap.classList.remove('is-pointer-active');
+      reviewWrap.style.setProperty('--tilt-x', '0deg');
+      reviewWrap.style.setProperty('--tilt-y', '0deg');
+      reviewWrap.style.setProperty('--glow-x', '50%');
+      reviewWrap.style.setProperty('--glow-y', '50%');
+    };
+
+    reviewWrap.addEventListener('pointermove', (event) => {
+      reviewWrap.classList.add('is-pointer-active');
+      const rect = reviewWrap.getBoundingClientRect();
+      const x = Math.min(Math.max(event.clientX - rect.left, 0), rect.width);
+      const y = Math.min(Math.max(event.clientY - rect.top, 0), rect.height);
+      const xRatio = x / rect.width;
+      const yRatio = y / rect.height;
+
+      reviewWrap.style.setProperty('--tilt-x', `${((0.5 - yRatio) * 8).toFixed(2)}deg`);
+      reviewWrap.style.setProperty('--tilt-y', `${((xRatio - 0.5) * 10).toFixed(2)}deg`);
+      reviewWrap.style.setProperty('--glow-x', `${(xRatio * 100).toFixed(1)}%`);
+      reviewWrap.style.setProperty('--glow-y', `${(yRatio * 100).toFixed(1)}%`);
+    });
+
+    reviewWrap.addEventListener('pointerleave', resetReviewBadge);
+    reviewWrap.addEventListener('blur', resetReviewBadge, true);
+  }
 </script>
 
 </body>
