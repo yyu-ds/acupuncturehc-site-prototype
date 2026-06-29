@@ -87,14 +87,14 @@
     color: var(--forest-deep);
   }
   .nav-logo-icon {
-    width: 48px; height: 48px;
+    width: 60px; height: 60px;
     object-fit: contain;
     display: block;
     flex-shrink: 0;
   }
   .nav-logo-text {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
+    font-size: 26px;
     font-weight: 600;
     letter-spacing: -0.3px;
     line-height: 1.1;
@@ -102,12 +102,12 @@
   .nav-logo-text span {
     display: block;
     font-family: 'Outfit', sans-serif;
-    font-size: 10px;
+    font-size: 11.5px;
     font-weight: 400;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
     color: var(--sage);
-    margin-top: 2px;
+    margin-top: 3px;
   }
   .nav-links {
     display: flex;
@@ -1459,6 +1459,9 @@
   @media (max-width: 768px) {
     .nav-links { display: none; }
     .mobile-toggle { display: flex; }
+    .nav-logo-icon { width: 48px; height: 48px; }
+    .nav-logo-text { font-size: 21px; }
+    .nav-logo-text span { font-size: 10px; letter-spacing: 2px; }
     .nav-links.open {
       display: flex;
       flex-direction: column;
