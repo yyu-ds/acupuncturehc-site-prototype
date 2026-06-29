@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Acupuncture Health Center in Edina, Minnesota. Traditional Chinese medicine, acupuncture, herbal medicine, Tui Na, cupping, fees, insurance, and clinic information.">
 <title>Acupuncture in Edina, MN | Acupuncture Health Center</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%232D5A3D'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='30' fill='%23FAF7F2'%3E%E9%8D%BC%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="logo-icon.png">
+<link rel="apple-touch-icon" href="logo-icon.png">
 <link rel="canonical" href="https://yyu-ds.github.io/acupuncturehc-site-prototype/">
 
 <!-- Open Graph / social + AI link previews -->
@@ -27,11 +28,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --forest: #2D5A3D;
-    --forest-deep: #1E3F2B;
-    --forest-light: #3A7350;
-    --sage: #7A9E7E;
-    --sage-light: #A8C5AB;
+    --forest: #355E52;
+    --forest-deep: #21413A;
+    --forest-light: #4A7C6E;
+    --sage: #8BAEA2;
+    --sage-light: #B4CD95;
     --cream: #FAF7F2;
     --cream-warm: #F5EDE0;
     --gold: #C4A265;
@@ -40,7 +41,7 @@
     --text: #3A3A3A;
     --text-light: #6B6B6B;
     --white: #FFFFFF;
-    --divider: rgba(45, 90, 61, 0.12);
+    --divider: rgba(53,94,82, 0.12);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -86,14 +87,10 @@
     color: var(--forest-deep);
   }
   .nav-logo-icon {
-    width: 44px; height: 44px;
-    border-radius: 50%;
-    background: var(--forest);
-    display: flex; align-items: center; justify-content: center;
-    color: var(--cream);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
-    font-weight: 600;
+    width: 48px; height: 48px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
   }
   .nav-logo-text {
     font-family: 'Cormorant Garamond', serif;
@@ -153,7 +150,7 @@
   .nav-cta:hover {
     background: var(--forest-deep) !important;
     transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(45,90,61,0.3);
+    box-shadow: 0 4px 16px rgba(53,94,82,0.3);
   }
 
   .mobile-toggle {
@@ -195,7 +192,7 @@
     top: -200px; right: -200px;
     width: 800px; height: 800px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(122,158,126,0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(139,174,162,0.15) 0%, transparent 70%);
     pointer-events: none;
   }
   .hero-accent-2 {
@@ -222,8 +219,8 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(45,90,61,0.08);
-    border: 1px solid rgba(45,90,61,0.12);
+    background: rgba(53,94,82,0.08);
+    border: 1px solid rgba(53,94,82,0.12);
     padding: 8px 18px;
     border-radius: 100px;
     font-size: 12px;
@@ -294,7 +291,7 @@
   .btn-primary:hover {
     background: var(--forest-deep);
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(45,90,61,0.3);
+    box-shadow: 0 8px 30px rgba(53,94,82,0.3);
   }
   .btn-secondary {
     display: inline-flex;
@@ -347,7 +344,7 @@
       from 0deg,
       rgba(196,162,101,0),
       rgba(212,185,122,0.56),
-      rgba(45,90,61,0.28),
+      rgba(53,94,82,0.28),
       rgba(212,185,122,0.5),
       rgba(196,162,101,0)
     );
@@ -381,7 +378,7 @@
     border-radius: 22px;
     border: 1px solid rgba(255,255,255,0.78);
     box-shadow:
-      0 24px 70px rgba(30,63,43,0.14),
+      0 24px 70px rgba(33,65,58,0.14),
       0 8px 24px rgba(196,162,101,0.12),
       inset 0 1px 0 rgba(255,255,255,0.8);
     display: flex;
@@ -423,7 +420,7 @@
   .hero-review-wrap:focus-within .hero-float-card {
     border-color: rgba(212,185,122,0.58);
     box-shadow:
-      0 34px 90px rgba(30,63,43,0.2),
+      0 34px 90px rgba(33,65,58,0.2),
       0 14px 36px rgba(196,162,101,0.22),
       inset 0 1px 0 rgba(255,255,255,0.9);
     transform: translateY(-7px) scale(1.025) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
@@ -516,7 +513,7 @@
     align-self: center;
     padding: 8px 11px;
     border-radius: 999px;
-    background: rgba(45,90,61,0.08);
+    background: rgba(53,94,82,0.08);
     color: var(--forest);
     font-size: 11px;
     font-weight: 600;
@@ -540,7 +537,7 @@
     background: rgba(255,255,255,0.96);
     border: 1px solid rgba(255,255,255,0.78);
     box-shadow:
-      0 28px 80px rgba(30,63,43,0.2),
+      0 28px 80px rgba(33,65,58,0.2),
       0 10px 30px rgba(0,0,0,0.08);
     opacity: 0;
     visibility: hidden;
@@ -588,7 +585,7 @@
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(180deg, transparent 42%, rgba(30,63,43,0.54) 100%),
+      linear-gradient(180deg, transparent 42%, rgba(33,65,58,0.54) 100%),
       radial-gradient(circle at 48% 54%, transparent 0 18px, rgba(250,247,242,0.18) 19px, transparent 35px);
   }
   .map-chip {
@@ -714,7 +711,7 @@
   }
   .service-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 50px rgba(45,90,61,0.08);
+    box-shadow: 0 20px 50px rgba(53,94,82,0.08);
     border-color: var(--sage-light);
   }
   .service-card:hover::before { opacity: 1; }
@@ -722,8 +719,8 @@
     width: 56px; height: 56px;
     border-radius: 16px;
     display: flex; align-items: center; justify-content: center;
-    background: rgba(122,158,126,0.12);
-    border: 1px solid rgba(45,90,61,0.08);
+    background: rgba(139,174,162,0.12);
+    border: 1px solid rgba(53,94,82,0.08);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
     margin-bottom: 24px;
   }
@@ -774,7 +771,7 @@
   }
   .condition-item:hover {
     border-color: var(--sage-light);
-    background: rgba(122,158,126,0.04);
+    background: rgba(139,174,162,0.04);
     transform: translateX(4px);
   }
   .condition-dot {
@@ -865,7 +862,7 @@
     background: var(--forest-deep);
     border-radius: 24px;
     padding: 12px;
-    box-shadow: 0 22px 60px rgba(30,63,43,0.16);
+    box-shadow: 0 22px 60px rgba(33,65,58,0.16);
   }
   .about-video-shell::before {
     content: '';
@@ -919,8 +916,8 @@
     border-radius: 28px;
     margin: 0 auto 24px;
     overflow: hidden;
-    border: 1px solid rgba(45,90,61,0.16);
-    box-shadow: 0 18px 42px rgba(30,63,43,0.1);
+    border: 1px solid rgba(53,94,82,0.16);
+    box-shadow: 0 18px 42px rgba(33,65,58,0.1);
     background: linear-gradient(135deg, var(--sage-light), var(--sage));
     display: flex; align-items: center; justify-content: center;
     color: white;
@@ -1179,7 +1176,7 @@
   }
   .fee-card.featured {
     border-color: var(--forest);
-    box-shadow: 0 12px 40px rgba(45,90,61,0.1);
+    box-shadow: 0 12px 40px rgba(53,94,82,0.1);
   }
   .fee-card:hover { transform: translateY(-4px); }
   .fee-card h3 {
@@ -1268,8 +1265,8 @@
   .insurance-detail li {
     font-size: 14px;
     color: var(--forest-deep);
-    background: rgba(45,90,61,0.08);
-    border: 1px solid rgba(45,90,61,0.1);
+    background: rgba(53,94,82,0.08);
+    border: 1px solid rgba(53,94,82,0.1);
     border-radius: 100px;
     padding: 6px 12px;
   }
@@ -1327,7 +1324,7 @@
   .contact-icon {
     width: 48px; height: 48px;
     border-radius: 14px;
-    background: rgba(45,90,61,0.06);
+    background: rgba(53,94,82,0.06);
     display: flex; align-items: center; justify-content: center;
     font-size: 20px;
     flex-shrink: 0;
@@ -1613,7 +1610,7 @@
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="#" class="nav-logo">
-      <div class="nav-logo-icon">鍼</div>
+      <img class="nav-logo-icon" src="logo-icon.png" alt="Acupuncture Health Center logo" width="48" height="48">
       <div class="nav-logo-text">
         acupuncture health center
         <span>Edina, Minnesota</span>
