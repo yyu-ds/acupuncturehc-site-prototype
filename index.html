@@ -72,7 +72,7 @@
   .nav-inner {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 clamp(24px, 4vw, 40px);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -115,7 +115,7 @@
   .nav-links {
     display: flex;
     align-items: center;
-    gap: 36px;
+    gap: clamp(16px, 2vw, 36px);
     list-style: none;
   }
   .nav-links a {
@@ -126,6 +126,7 @@
     letter-spacing: 0.3px;
     transition: color 0.3s;
     position: relative;
+    white-space: nowrap;
   }
   .nav-links a::after {
     content: '';
@@ -140,10 +141,11 @@
   .nav-cta {
     background: var(--forest) !important;
     color: var(--cream) !important;
-    padding: 10px 24px;
+    padding: 12px 22px;
     border-radius: 100px;
-    font-size: 13px !important;
+    font-size: 16px !important;
     font-weight: 500 !important;
+    line-height: 1.1;
     letter-spacing: 0.5px;
     transition: all 0.3s !important;
   }
@@ -636,16 +638,11 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* ─── NOTICE BANNER ─── */
+  /* ─── NOTICE DIVIDER ─── */
   .notice {
     background: linear-gradient(135deg, var(--forest-deep), var(--forest));
-    color: var(--cream);
-    padding: 20px 40px;
-    text-align: center;
-    font-size: 15px;
-    line-height: 1.6;
+    height: 14px;
   }
-  .notice strong { color: var(--gold-light); }
 
   /* ─── SECTION SHARED ─── */
   .section {
@@ -1618,7 +1615,7 @@
     <a href="#" class="nav-logo">
       <div class="nav-logo-icon">鍼</div>
       <div class="nav-logo-text">
-        Acupuncture Health Center
+        acupuncture health center
         <span>Edina, Minnesota</span>
       </div>
     </a>
@@ -1640,9 +1637,7 @@
 
 <!-- NOTICE -->
 <div style="height:80px"></div>
-<div class="notice">
-  <strong>📍 New Location:</strong> We've moved to our expanded Edina office — <strong>Suite C-21</strong>, just across the hall. Our Minneapolis office has merged with Edina.
-</div>
+<div class="notice" aria-hidden="true"></div>
 
 <!-- HERO -->
 <section class="hero">
