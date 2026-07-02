@@ -355,12 +355,10 @@
     animation: reviewAura 5s linear infinite;
     pointer-events: none;
   }
-  .hero-review-wrap:hover,
   .hero-review-wrap.is-pointer-active,
   .hero-review-wrap:focus-within {
     animation-play-state: paused;
   }
-  .hero-review-wrap:hover::before,
   .hero-review-wrap.is-pointer-active::before,
   .hero-review-wrap:focus-within::before {
     opacity: 0.7;
@@ -415,7 +413,6 @@
     transition: transform 0.78s cubic-bezier(.2,.8,.2,1);
     pointer-events: none;
   }
-  .hero-review-wrap:hover .hero-float-card,
   .hero-review-wrap.is-pointer-active .hero-float-card,
   .hero-review-wrap:focus-within .hero-float-card {
     border-color: rgba(212,185,122,0.58);
@@ -425,7 +422,6 @@
       inset 0 1px 0 rgba(255,255,255,0.9);
     transform: translateY(-7px) scale(1.025) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
   }
-  .hero-review-wrap:hover .hero-float-card::after,
   .hero-review-wrap.is-pointer-active .hero-float-card::after,
   .hero-review-wrap:focus-within .hero-float-card::after {
     transform: translateX(360%) rotate(14deg);
@@ -442,7 +438,6 @@
   @keyframes reviewAura {
     to { transform: scale(0.92) rotate(360deg); }
   }
-  .hero-review-wrap:hover::before,
   .hero-review-wrap.is-pointer-active::before,
   .hero-review-wrap:focus-within::before {
     animation-name: reviewAuraActive;
@@ -521,7 +516,6 @@
     transform: translateZ(18px);
     transition: background 0.3s ease, color 0.3s ease;
   }
-  .hero-review-wrap:hover .review-action,
   .hero-review-wrap.is-pointer-active .review-action,
   .hero-review-wrap:focus-within .review-action {
     background: var(--forest);
@@ -557,12 +551,47 @@
     border-right: 1px solid rgba(255,255,255,0.78);
     border-bottom: 1px solid rgba(255,255,255,0.78);
   }
-  .hero-review-wrap:hover .hero-map-preview,
   .hero-review-wrap.is-pointer-active .hero-map-preview,
   .hero-review-wrap:focus-within .hero-map-preview {
     opacity: 1;
     visibility: visible;
     transform: translateY(0) scale(1) rotateX(0);
+  }
+  /* Hover effects only on devices that truly hover. On touch screens,
+     hover-revealed content makes Safari swallow the first tap, and the
+     idle float animation moves the tap target — so both are disabled. */
+  @media (hover: hover) {
+    .hero-review-wrap:hover { animation-play-state: paused; }
+    .hero-review-wrap:hover::before {
+      opacity: 0.7;
+      transform: scale(1);
+      animation-name: reviewAuraActive;
+    }
+    .hero-review-wrap:hover .hero-float-card {
+      border-color: rgba(212,185,122,0.58);
+      box-shadow:
+        0 34px 90px rgba(33,65,58,0.2),
+        0 14px 36px rgba(196,162,101,0.22),
+        inset 0 1px 0 rgba(255,255,255,0.9);
+      transform: translateY(-7px) scale(1.025) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+    }
+    .hero-review-wrap:hover .hero-float-card::after {
+      transform: translateX(360%) rotate(14deg);
+    }
+    .hero-review-wrap:hover .review-action {
+      background: var(--forest);
+      color: var(--cream);
+    }
+    .hero-review-wrap:hover .hero-map-preview {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1) rotateX(0);
+    }
+  }
+  @media (hover: none) {
+    .hero-review-wrap {
+      animation: none;
+    }
   }
   .map-frame {
     position: relative;
@@ -2289,6 +2318,17 @@
 
     reviewWrap.addEventListener('pointerleave', resetReviewBadge);
     reviewWrap.addEventListener('blur', resetReviewBadge, true);
+  }
+
+  // Fallback: if a click lands on the badge wrapper but outside the anchor
+  // (possible when the card is mid-animation between press and release),
+  // still open the Google Maps listing.
+  if (reviewWrap) {
+    const reviewLink = reviewWrap.querySelector('.hero-float-card');
+    reviewWrap.addEventListener('click', (event) => {
+      if (!reviewLink || event.target.closest('.hero-float-card')) return;
+      window.open(reviewLink.href, '_blank', 'noopener');
+    });
   }
 </script>
 
